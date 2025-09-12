@@ -1,0 +1,54 @@
+import Recipe from "../models/recipe.js";
+
+export const getAllRecipes = async (req, res) => {
+  try {
+    const recipes = await Recipe.find();
+    res.status(200).json(recipes);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+export const createRecipe = async (req, res) => {
+  const recipe = req.body;
+  console.log(recipe);
+  const newRecipe = new Recipe(recipe);
+  try {
+    await newRecipe.save();
+    res.status(201).json(newRecipe);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
+};
+
+export const getRecipeById = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const recipe = await Recipe.findById(id);
+    res.status(200).json(recipe);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+export const updateRecipe = async (req, res) => {
+  const {id}  = req.params;
+  const newData = req.body;
+  console.log(req.params.id);
+  const recipe = await Recipe.findByIdAndUpdate(id, newData, { new: true });
+  res.status(200).json({
+    data: recipe,
+    status: "success",
+    message: "user updated successfully",
+  });
+};
+
+export const deleteRecipe = async (req, res) => {
+  const id = req.params.id;
+  try {
+    await Recipe.findByIdAndDelete(id);
+    res.status(200).json({ message: "Recipe deleted successfully" });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
