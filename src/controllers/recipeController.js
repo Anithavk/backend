@@ -2,7 +2,9 @@ import Recipe from "../models/recipe.js";
 
 export const getAllRecipes = async (req, res) => {
   try {
-    const recipes = await Recipe.find();
+    const recipes = await Recipe.find()
+      .select("-password -__v -createdat -updatedat")
+      .lean();
     res.status(200).json({
       data: recipes,
       status: "success",
@@ -28,7 +30,9 @@ export const createRecipe = async (req, res) => {
 export const getRecipeById = async (req, res) => {
   const id = req.params.id;
   try {
-    const recipe = await Recipe.findById(id);
+    const recipe = await Recipe.findById(id)
+      .select("-password -__v -createdat -updatedat")
+      .lean();
     res.status(200).json(recipe);
   } catch (error) {
     res.status(404).json({ message: error.message });
