@@ -32,7 +32,7 @@ export const getRecipeById = async (req, res) => {
 };
 
 export const updateRecipe = async (req, res) => {
-  const {id}  = req.params;
+  const { id } = req.params;
   const newData = req.body;
   console.log(req.params.id);
   const recipe = await Recipe.findByIdAndUpdate(id, newData, { new: true });
