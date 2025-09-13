@@ -3,7 +3,11 @@ import Recipe from "../models/recipe.js";
 export const getAllRecipes = async (req, res) => {
   try {
     const recipes = await Recipe.find();
-    res.status(200).json(recipes);
+    res.status(200).json({
+      data: recipes,
+      status: "success",
+      message: "recipe added successfully",
+    });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
@@ -39,7 +43,7 @@ export const updateRecipe = async (req, res) => {
   res.status(200).json({
     data: recipe,
     status: "success",
-    message: "user updated successfully",
+    message: "recipe updated successfully",
   });
 };
 
