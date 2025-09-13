@@ -1,0 +1,252 @@
+Recipes-API
+
+1.getAllRecipes
+
+Request URL: https://recipe-api-pov8.onrender.com/api/recipes/
+
+Method:GET
+
+Resoponse:
+[
+    {
+        "_id": "68c46c77275d26b3255f6473",
+        "name": "Paneer Butter Masala",
+        "procedure": "Fry onion and tomatoes, blend into paste, cook with spices, add paneer and butter.",
+        "ingredients": [
+            "200g paneer",
+            "2 tomatoes",
+            "1 onion",
+            "2 tbsp butter",
+            "1 tsp garam masala"
+        ],
+        "prepTime": "15 mins",
+        "cookTime": "20 mins",
+        "servings": 2,
+        "createdAt": "2025-09-12T18:54:47.690Z",
+        "updatedAt": "2025-09-12T18:54:47.690Z",
+        "__v": 0
+    },
+    {
+        "_id": "68c46c89275d26b3255f6475",
+        "name": "Vegetable Pulao",
+        "procedure": "Fry onions and cumin seeds in oil, add vegetables, then rice and water, cook until rice is done.",
+        "ingredients": [
+            "1 cup basmati rice",
+            "1 cup mixed vegetables (carrot, peas, beans)",
+            "1 onion",
+            "2 tbsp oil",
+            "1 tsp cumin seeds",
+            "2 cups water"
+        ],
+        "prepTime": "10 mins",
+        "cookTime": "20 mins",
+        "servings": 2,
+        "createdAt": "2025-09-12T18:55:05.739Z",
+        "updatedAt": "2025-09-12T18:55:05.739Z",
+        "__v": 0
+    },
+    {
+        "_id": "68c46c99275d26b3255f6477",
+        "name": "Masala Dosa",
+        "procedure": "Boil and mash potatoes, fry with onion, mustard seeds, and turmeric. Spread dosa batter on pan, fill with potato masala, fold and serve.",
+        "ingredients": [
+            "2 cups dosa batter",
+            "2 potatoes",
+            "1 onion",
+            "1 tsp mustard seeds",
+            "1 tsp turmeric",
+            "2 tbsp oil"
+        ],
+        "prepTime": "15 mins",
+        "cookTime": "15 mins",
+        "servings": 2,
+        "createdAt": "2025-09-12T18:55:21.775Z",
+        "updatedAt": "2025-09-12T18:55:21.775Z",
+        "__v": 0
+    },
+    {
+        "_id": "68c46c9b275d26b3255f6479",
+        "name": "Masala Dosa",
+        "procedure": "Boil and mash potatoes, fry with onion, mustard seeds, and turmeric. Spread dosa batter on pan, fill with potato masala, fold and serve.",
+        "ingredients": [
+            "2 cups dosa batter",
+            "2 potatoes",
+            "1 onion",
+            "1 tsp mustard seeds",
+            "1 tsp turmeric",
+            "2 tbsp oil"
+        ],
+        "prepTime": "15 mins",
+        "cookTime": "15 mins",
+        "servings": 2,
+        "createdAt": "2025-09-12T18:55:23.621Z",
+        "updatedAt": "2025-09-12T18:55:23.621Z",
+        "__v": 0
+    }
+]
+
+2.CreateRecipe
+{
+  "name": "Idli with Coconut Chutney",
+  "ingredients": [
+    "2 cups idli batter",
+    "1/2 cup grated coconut",
+    "2 green chilies",
+    "1 tbsp roasted chana dal",
+    "1/2 inch ginger",
+    "Salt to taste",
+    "1 tsp mustard seeds",
+    "1 sprig curry leaves",
+    "1 tbsp oil"
+  ],
+  "procedure": "Pour idli batter into greased idli molds and steam for 10-12 minutes. For chutney, blend coconut, green chilies, roasted chana dal, ginger, and salt with little water. Heat oil, add mustard seeds and curry leaves, and pour over chutney. Serve idlis hot with coconut chutney.",
+  "prepTime": "10 mins",
+  "cookTime": "15 mins",
+  "servings": 3
+}
+
+
+Method:POST
+Request URL: https://recipe-api-pov8.onrender.com/api/recipes/
+Request
+{
+  "name": "Idli with Coconut Chutney",
+  "ingredients": [
+    "2 cups idli batter",
+    "1/2 cup grated coconut",
+    "2 green chilies",
+    "1 tbsp roasted chana dal",
+    "1/2 inch ginger",
+    "Salt to taste",
+    "1 tsp mustard seeds",
+    "1 sprig curry leaves",
+    "1 tbsp oil"
+  ],
+  "procedure": "Pour idli batter into greased idli molds and steam for 10-12 minutes. For chutney, blend coconut, green chilies, roasted chana dal, ginger, and salt with little water. Heat oil, add mustard seeds and curry leaves, and pour over chutney. Serve idlis hot with coconut chutney.",
+  "prepTime": "10 mins",
+  "cookTime": "15 mins",
+  "servings": 3
+}
+
+
+
+Response
+{
+    "name": "Idli with Coconut Chutney",
+    "procedure": "Pour idli batter into greased idli molds and steam for 10-12 minutes. For chutney, blend coconut, green chilies, roasted chana dal, ginger, and salt with little water. Heat oil, add mustard seeds and curry leaves, and pour over chutney. Serve idlis hot with coconut chutney.",
+    "ingredients": [
+        "2 cups idli batter",
+        "1/2 cup grated coconut",
+        "2 green chilies",
+        "1 tbsp roasted chana dal",
+        "1/2 inch ginger",
+        "Salt to taste",
+        "1 tsp mustard seeds",
+        "1 sprig curry leaves",
+        "1 tbsp oil"
+    ],
+    "prepTime": "10 mins",
+    "cookTime": "15 mins",
+    "servings": 3,
+    "_id": "68c5336752c6808b9a0ac397",
+    "createdAt": "2025-09-13T09:03:35.385Z",
+    "updatedAt": "2025-09-13T09:03:35.385Z",
+    "__v": 0
+}
+
+3.getRecipeById
+RequestURL: https://recipe-api-pov8.onrender.com/api/recipes/68c46c89275d26b3255f6475
+
+Method:GET
+Response:{
+    "_id": "68c46c89275d26b3255f6475",
+    "name": "Vegetable Pulao",
+    "procedure": "Fry onions and cumin seeds in oil, add vegetables, then rice and water, cook until rice is done.",
+    "ingredients": [
+        "1 cup basmati rice",
+        "1 cup mixed vegetables (carrot, peas, beans)",
+        "1 onion",
+        "2 tbsp oil",
+        "1 tsp cumin seeds",
+        "2 cups water"
+    ],
+    "prepTime": "10 mins",
+    "cookTime": "20 mins",
+    "servings": 2,
+    "createdAt": "2025-09-12T18:55:05.739Z",
+    "updatedAt": "2025-09-12T18:55:05.739Z",
+    
+}
+
+4.updateRecipe
+RequestURL: https://recipe-api-pov8.onrender.com/api/recipes/68c46c77275d26b3255f6473
+Method:PUT
+Request:
+
+{
+    "name": "Paneer Butter Masala",
+    "ingredients": [
+        "250g paneer",
+        "2 tomatoes",
+        "1 onion",
+        "2 tbsp butter",
+        "1 tsp garam masala"
+    ],
+    "procedure": "Fry onion and tomatoes, blend into paste, cook with spices, add paneer and butter.",
+    "prepTime": "15 mins",
+    "cookTime": "20 mins",
+    "servings": 3
+}
+response:
+{
+    "data": {
+        "_id": "68c46c77275d26b3255f6473",
+        "name": "Paneer Butter Masala",
+        "procedure": "Fry onion and tomatoes, blend into paste, cook with spices, add paneer and butter.",
+        "ingredients": [
+            "250g paneer",
+            "2 tomatoes",
+            "1 onion",
+            "2 tbsp butter",
+            "1 tsp garam masala"
+        ],
+        "prepTime": "15 mins",
+        "cookTime": "20 mins",
+        "servings": 3,
+        "createdAt": "2025-09-12T18:54:47.690Z",
+        "updatedAt": "2025-09-13T09:25:51.919Z",
+        "__v": 0
+    },
+    "status": "success",
+    "message": "recipe updated successfully"
+}
+
+4.
+RequestUrl: https://recipe-api-pov8.onrender.com/api/recipes/68c538faed084e5997cca02f
+Method:Delete
+Response:
+{
+    "data": {
+        "_id": "68c538faed084e5997cca02f",
+        "name": "Idli with Coconut Chutney",
+        "procedure": "Pour idli batter into greased idli molds and steam for 10-12 minutes. For chutney, blend coconut, green chilies, roasted chana dal, ginger, and salt with little water. Heat oil, add mustard seeds and curry leaves, and pour over chutney. Serve idlis hot with coconut chutney.",
+        "ingredients": [
+            "2 cups idli batter",
+            "1/2 cup grated coconut",
+            "2 green chilies",
+            "1 tbsp roasted chana dal",
+            "1/2 inch ginger",
+            "Salt to taste",
+            "1 tsp mustard seeds",
+            "1 sprig curry leaves",
+            "1 tbsp oil"
+        ],
+        "prepTime": "10 mins",
+        "cookTime": "15 mins",
+        "servings": 3,
+        "createdAt": "2025-09-13T09:27:22.463Z",
+        "updatedAt": "2025-09-13T09:27:22.463Z",
+        "__v": 0
+    },
+    "message": "Recipe deleted successfully"
+}
