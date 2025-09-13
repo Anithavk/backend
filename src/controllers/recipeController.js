@@ -50,8 +50,10 @@ export const updateRecipe = async (req, res) => {
 export const deleteRecipe = async (req, res) => {
   const id = req.params.id;
   try {
-    await Recipe.findByIdAndDelete(id);
-    res.status(200).json({ message: "Recipe deleted successfully" });
+    const deleteRecipe = await Recipe.findByIdAndDelete(id);
+    res
+      .status(200)
+      .json({ data: deleteRecipe, message: "Recipe deleted successfully" });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
